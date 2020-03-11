@@ -1,3 +1,4 @@
+-- creating a table and inserting values to the table
 create table shoes (
 ID char(10) primary key, 
 Brand char(120) not null, 
@@ -21,11 +22,33 @@ VALUES
 , "200.34"
 , null
 );
+insert into shoes(ID
+, Brand
+, OtherTypes
+, Color
+, Price
+, Dessc
+)
+values(
+"1245658754"
+, "Addidas"
+, "addisplank"
+, "black"
+,"150.00"
+, null);
+select * from city; 
+-- filtering data example 
+select * from city 
+where Population<="5000";
 
-select * from shoes 
+select Name, CountryCode from city where District = "Hamilton";
 
+select * from city where CountryCode = "AFG";
 
+ select * from city 
+where CountryCode <> "AFG";
 
+ select * from city where Population between "500" and "5000";
  
 
 

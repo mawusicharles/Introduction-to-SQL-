@@ -50,5 +50,14 @@ where CountryCode <> "AFG";
 
  select * from city where Population between "500" and "5000";
  
+ -- applying advanced filitering (in, and, not , or )
+ 
+select * from city where (CountryCode = "AFG" or CountryCode= "NLD") and Population <=500000;
+select * from city where Population <=500000;
+select * from city where not CountryCode="AFG" and Not CountryCode="NLD";
+
+-- Using wild cards 
+
+select * from city where CountryCode like "%L" order by Population asc;
 
 

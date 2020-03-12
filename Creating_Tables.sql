@@ -60,4 +60,12 @@ select * from city where not CountryCode="AFG" and Not CountryCode="NLD";
 
 select * from city where CountryCode like "%L" order by Population asc;
 
-
+-- Basic operations (addition multiplication and devision)
+select Name, (population/100000) as populatio_per100000 from city;
+select *,(population/100000) as populatio_per100000  from city ;
+-- aggregate operations
+select count(*) as totalcouuntry from city;
+select count(Population) as totalcouuntry from city;
+select sum(Population) as totalpopulation from city;
+select avg(Population) as averagepulation from city ;
+select* from city where Population = 42 ; 

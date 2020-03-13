@@ -67,5 +67,12 @@ select *,(population/100000) as populatio_per100000  from city ;
 select count(*) as totalcouuntry from city;
 select count(Population) as totalcouuntry from city;
 select sum(Population) as totalpopulation from city;
-select avg(Population) as averagepulation from city ;
+select*, avg(Population) as averagepulation from city
+group by CountryCode ;
 select* from city where Population = 42 ; 
+
+select*  from world.city
+	where CountryCode in  ( select CountryCode
+    from world.countrylanguage 
+    where Language = "English");
+    

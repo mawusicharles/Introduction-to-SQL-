@@ -76,3 +76,13 @@ select*  from world.city
     from world.countrylanguage 
     where Language = "English");
     
+-- joining three tables (inner joins)
+select o.Continent, o.Region, o.Code, o.SurfaceArea, B.Language,
+ B.IsOfficial, c.District, c.name
+	from (( world.country o inner join world.countrylanguage B
+	on o.Code= B.CountryCode)
+		inner join world.city c 
+        on o.Code=c.CountryCode); 
+
+ 
+

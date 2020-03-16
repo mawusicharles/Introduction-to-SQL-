@@ -83,6 +83,16 @@ select o.Continent, o.Region, o.Code, o.SurfaceArea, B.Language,
 	on o.Code= B.CountryCode)
 		inner join world.city c 
         on o.Code=c.CountryCode); 
+        
+-- Self joints using Aliases 
+select L.Language as Lan, B.IsOfficial as off
+from world.countrylanguage L , world.countrylanguage B
+where L.CountryCode = B.CountryCode;
+-- Left join, right join and full outer join/union
+select cl.Language , cl.IsOfficial, cl.Percentage, ct.Name , ct.District 
+from world.countrylanguage cl 
+left join world.city ct 
+on cl.CountryCode=ct.CountryCode;
 
  
 

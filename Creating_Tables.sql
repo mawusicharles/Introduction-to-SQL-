@@ -94,5 +94,21 @@ from world.countrylanguage cl
 left join world.city ct 
 on cl.CountryCode=ct.CountryCode;
 
- 
+-- String editing (substring, indexing, space removal )
+select * , substr((concat(Language, CountryCode)), 1, 8)
+ from world.countrylanguage ;
 
+select*, upper(Language) from world.countrylanguage;
+-- Creating new tables for date time examples 
+create table people1(indexNum char(1) primary key
+, Name char(50)  not null
+, Bithdate date not null );
+insert into people1(indexNum, Name, Bithdate)
+ value("1", "Amandine Kilo", "1976-1-10" ); 
+ insert into people1(indexNum, Name, Bithdate)
+ value("2", "Charles duflo", "1970-8-5" );
+ insert into people1(indexNum, Name, Bithdate)
+ value("3", "Ewurama sticka", "1980-08-25" );
+ select * from people1;
+ -- Using date string 
+ select *, dayofyear(Bithdate)  Year,  substr( (curdate()- Bithdate), 1, 2) as age  from people1; 

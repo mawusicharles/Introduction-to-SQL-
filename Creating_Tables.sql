@@ -112,3 +112,12 @@ insert into people1(indexNum, Name, Bithdate)
  select * from people1;
  -- Using date string 
  select *, dayofyear(Bithdate)  Year,  substr( (curdate()- Bithdate), 1, 2) as age  from people1; 
+ 
+ -- case statement 
+ select  Code, Name, Continent, Population, SurfaceArea, IndepYear, LifeExpectancy
+ , GNP*1000000/Population as PercapitaGNP
+ ,case when LifeExpectancy >=70 then "High"
+ when LifeExpectancy between 50 and 69 then "medium "
+ when LifeExpectancy <=49.9 then "Low"
+ end "Rank of Life expectatncy"
+ from world.country;
